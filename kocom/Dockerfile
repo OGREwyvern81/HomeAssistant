@@ -5,8 +5,9 @@ ENV LANG C.UTF-8
 COPY run.sh kocom.cfg kocom.py /
 
 # Install requirements for add-on
-RUN pip install pyserial
-RUN pip install paho-mqtt
+RUN python3 -m pip install pyserial
+RUN python3 -m pip install paho-mqtt
+RUN python3 -m pip install typing_extensions 
 
 WORKDIR /share
 RUN chmod a+x /run.sh
